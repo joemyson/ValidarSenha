@@ -13,6 +13,8 @@ namespace ValidarSenha
 {
     public partial class Frm_ValidaSenha : Form
     {
+        bool versenha = false;
+
         public Frm_ValidaSenha()
         {
             InitializeComponent();
@@ -30,6 +32,23 @@ namespace ValidarSenha
             ChecaForcaSenha.ForcaDaSenha forca;
             forca = verifica.GetForcaDaSenha(Txt_Senha.Text);
             lbl_Resultado.Text = forca.ToString();
+        }
+
+        private void btn_verSenha_Click(object sender, EventArgs e)
+        {
+            if (versenha == false)
+            {
+                Txt_Senha.PasswordChar = '\0';
+                versenha = true;
+                btn_verSenha.Text = "Esconder senha";
+
+            }
+            else
+            {
+                Txt_Senha.PasswordChar = '*';
+                versenha = false;
+                btn_verSenha.Text = "Ver senha";
+            }
         }
     }
     public class ChecaForcaSenha

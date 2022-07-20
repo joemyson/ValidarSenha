@@ -32,12 +32,14 @@ namespace ValidarSenha
             this.Txt_Senha = new System.Windows.Forms.TextBox();
             this.lbl_Resultado = new System.Windows.Forms.Label();
             this.Btn_reset = new System.Windows.Forms.Button();
+            this.btn_verSenha = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Txt_Senha
             // 
             this.Txt_Senha.Location = new System.Drawing.Point(12, 45);
             this.Txt_Senha.Name = "Txt_Senha";
+            this.Txt_Senha.PasswordChar = '*';
             this.Txt_Senha.Size = new System.Drawing.Size(218, 20);
             this.Txt_Senha.TabIndex = 0;
             this.Txt_Senha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_Senha_KeyDown);
@@ -62,11 +64,22 @@ namespace ValidarSenha
             this.Btn_reset.UseVisualStyleBackColor = true;
             this.Btn_reset.Click += new System.EventHandler(this.Btn_reset_Click);
             // 
+            // btn_verSenha
+            // 
+            this.btn_verSenha.Location = new System.Drawing.Point(245, 71);
+            this.btn_verSenha.Name = "btn_verSenha";
+            this.btn_verSenha.Size = new System.Drawing.Size(111, 23);
+            this.btn_verSenha.TabIndex = 3;
+            this.btn_verSenha.Text = "Ver Senha";
+            this.btn_verSenha.UseVisualStyleBackColor = true;
+            this.btn_verSenha.Click += new System.EventHandler(this.btn_verSenha_Click);
+            // 
             // Frm_ValidaSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 154);
+            this.Controls.Add(this.btn_verSenha);
             this.Controls.Add(this.Btn_reset);
             this.Controls.Add(this.lbl_Resultado);
             this.Controls.Add(this.Txt_Senha);
@@ -83,6 +96,7 @@ namespace ValidarSenha
         private System.Windows.Forms.TextBox Txt_Senha;
         private System.Windows.Forms.Label lbl_Resultado;
         private System.Windows.Forms.Button Btn_reset;
+        private System.Windows.Forms.Button btn_verSenha;
     }
 }
 

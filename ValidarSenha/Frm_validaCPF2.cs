@@ -26,29 +26,40 @@ namespace ValidarSenha
 
             if (V_conteudo == "")
             {
-                MessageBox.Show("Você tem que incluir o CPF", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("CPF INVALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            else { 
-
-                if (MessageBox.Show("Deseja valida o CPF", "Caixa de Dialogo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            else {
+                if (V_conteudo.Length != 11)
                 {
-                    bool validaCpf = false;
-                    validaCpf = Classe_uteis.Valida(Msk_textbox.Text);
-                    if (validaCpf == true)
-                    {
-                        MessageBox.Show("CPF VALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("CPF INVALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-
-                    }
+                    MessageBox.Show("CPF DEVE TER 11 DIGITOS", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+                else
+                {
+
+                    if (MessageBox.Show("Deseja valida o CPF", "Caixa de Dialogo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        bool validaCpf = false;
+                        validaCpf = Classe_uteis.Valida(Msk_textbox.Text);
+                        if (validaCpf == true)
+                        {
+                            MessageBox.Show("CPF VALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("CPF INVALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+                        }
+
+                    }
+                }
+
+
+                
 
             }
 

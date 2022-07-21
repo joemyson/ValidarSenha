@@ -19,22 +19,34 @@ namespace ValidarSenha
 
         private void btn_valida_Click(object sender, EventArgs e)
         {
+            string V_conteudo;
+            V_conteudo = Msk_textbox.Text;
+            V_conteudo = V_conteudo.Replace(".", "").Replace("-", "");
+            V_conteudo = V_conteudo.Trim();
 
-
-            if(MessageBox.Show("Deseja valida o CPF","Caixa de Dialogo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
+            if (V_conteudo == "")
             {
-                bool validaCpf = false;
-                validaCpf = Classe_uteis.Valida(Msk_textbox.Text);
-                if (validaCpf == true)
+                MessageBox.Show("Você tem que incluir o CPF", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else { 
+
+                if (MessageBox.Show("Deseja valida o CPF", "Caixa de Dialogo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show("CPF VALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bool validaCpf = false;
+                    validaCpf = Classe_uteis.Valida(Msk_textbox.Text);
+                    if (validaCpf == true)
+                    {
+                        MessageBox.Show("CPF VALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                }
-                else
-                {
-                    MessageBox.Show("CPF INVALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("CPF INVALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
+
+                    }
 
                 }
 

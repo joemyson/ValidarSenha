@@ -32,6 +32,19 @@ namespace ValidarSenha
             ChecaForcaSenha.ForcaDaSenha forca;
             forca = verifica.GetForcaDaSenha(Txt_Senha.Text);
             lbl_Resultado.Text = forca.ToString();
+
+            if( lbl_Resultado.Text == "Inaceitavel"| lbl_Resultado.Text == "Fraca")
+            {
+                lbl_Resultado.ForeColor = Color.Red;
+            }
+            if (lbl_Resultado.Text == " Aceitavel" )
+            {
+                lbl_Resultado.ForeColor = Color.Red;
+            }
+            if (lbl_Resultado.Text == "Forte" | lbl_Resultado.Text == "Segura")
+            {
+                lbl_Resultado.ForeColor = Color.Green;
+            }
         }
 
         private void btn_verSenha_Click(object sender, EventArgs e)

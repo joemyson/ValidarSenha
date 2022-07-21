@@ -19,22 +19,29 @@ namespace ValidarSenha
 
         private void btn_valida_Click(object sender, EventArgs e)
         {
-            bool validaCpf = false;
-            validaCpf = Classe_uteis.Valida(Msk_textbox.Text);
-            if (validaCpf == true)
-            {
-                MessageBox.Show("CPF VALIDO","Alerta de Situação do CPF",MessageBoxButtons.OK,MessageBoxIcon.Information);
-              
-            }
-            else
-            {
-                MessageBox.Show("CPF INVALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-               
+
+            if(MessageBox.Show("Deseja valida o CPF","Caixa de Dialogo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
+            {
+                bool validaCpf = false;
+                validaCpf = Classe_uteis.Valida(Msk_textbox.Text);
+                if (validaCpf == true)
+                {
+                    MessageBox.Show("CPF VALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("CPF INVALIDO", "Alerta de Situação do CPF", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+
+                }
 
             }
 
         }
+
 
         private void btn_limpa_Click(object sender, EventArgs e)
         {

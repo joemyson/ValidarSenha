@@ -1,23 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ValidarSenha
 {
-    public partial class Frm_validaCPF : Form
+    class  Classe_uteis
     {
-        public Frm_validaCPF()
-        {
-            InitializeComponent();
-        }
-
-        public bool Valida(string cpf)
+        public static bool  Valida(string cpf)
         {
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -50,33 +41,6 @@ namespace ValidarSenha
                 resto = 11 - resto;
             digito = digito + resto.ToString();
             return cpf.EndsWith(digito);
-        }
-
-        private void btn_limpa_Click(object sender, EventArgs e)
-        {
-            Msk_textbox.Text = "";
-            lbl_text.Text = "";
-
-        }
-
-      
-
-        private void btn_valida_Click(object sender, EventArgs e)
-        {
-            bool validaCpf = false;
-            validaCpf = Valida(Msk_textbox.Text);
-             if(validaCpf == true)
-            {
-                lbl_text.Text = "CPF VALIDO";
-                lbl_text.ForeColor = Color.Green;
-            }
-            else
-            {
-                lbl_text.Text = "CPF INVALIDO";
-                lbl_text.ForeColor = Color.Red;
-
-            }
-
         }
     }
 }

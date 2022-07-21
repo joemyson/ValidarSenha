@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classe_uteis.cs" />
+    <Compile Include="Frm_validaCPF2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_validaCPF2.Designer.cs">
+      <DependentUpon>Frm_validaCPF2.cs</DependentUpon>
+    </Compile>
     <Compile Include="mascara.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +73,9 @@
     <Compile Include="ValidaCPF.Designer.cs">
       <DependentUpon>ValidaCPF.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Frm_validaCPF2.resx">
+      <DependentUpon>Frm_validaCPF2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mascara.resx">
       <DependentUpon>mascara.cs</DependentUpon>
     </EmbeddedResource>

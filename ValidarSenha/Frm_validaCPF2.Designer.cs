@@ -1,7 +1,7 @@
 ﻿
 namespace ValidarSenha
 {
-    partial class Frm_validaCPF
+    partial class Frm_validaCPF2
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@ namespace ValidarSenha
         private void InitializeComponent()
         {
             this.Msk_textbox = new System.Windows.Forms.MaskedTextBox();
-            this.lbl_text = new System.Windows.Forms.Label();
             this.btn_limpa = new System.Windows.Forms.Button();
             this.btn_valida = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -42,16 +41,6 @@ namespace ValidarSenha
             this.Msk_textbox.Name = "Msk_textbox";
             this.Msk_textbox.Size = new System.Drawing.Size(218, 20);
             this.Msk_textbox.TabIndex = 0;
-            // 
-            // lbl_text
-            // 
-            this.lbl_text.AutoSize = true;
-            this.lbl_text.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_text.Location = new System.Drawing.Point(12, 90);
-            this.lbl_text.Name = "lbl_text";
-            this.lbl_text.Size = new System.Drawing.Size(65, 22);
-            this.lbl_text.TabIndex = 1;
-            this.lbl_text.Text = "label1";
             // 
             // btn_limpa
             // 
@@ -73,16 +62,15 @@ namespace ValidarSenha
             this.btn_valida.UseVisualStyleBackColor = true;
             this.btn_valida.Click += new System.EventHandler(this.btn_valida_Click);
             // 
-            // ValidaCPF
+            // Frm_validaCPF2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 154);
             this.Controls.Add(this.btn_valida);
             this.Controls.Add(this.btn_limpa);
-            this.Controls.Add(this.lbl_text);
             this.Controls.Add(this.Msk_textbox);
-            this.Name = "ValidaCPF";
+            this.Name = "Frm_validaCPF2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Validação de CPF";
             this.ResumeLayout(false);
@@ -93,7 +81,6 @@ namespace ValidarSenha
         #endregion
 
         private System.Windows.Forms.MaskedTextBox Msk_textbox;
-        private System.Windows.Forms.Label lbl_text;
         private System.Windows.Forms.Button btn_limpa;
         private System.Windows.Forms.Button btn_valida;
     }
